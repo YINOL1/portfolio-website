@@ -1,27 +1,33 @@
-// src/components/AboutMe.jsx
+import './AboutMe.css'; // We'll set this up next!
 
 export default function AboutMe() {
-  const name = "Ian";
-  const githubUrl = "https://github.com/YINOL1"; // Change to your actual link
-  const linkedinUrl = "https://linkedin.com/in/iyjwu"; // Change to your actual link
+  
+    return (
+        // The id="about" is the magic connection to your NavBar!
+        <section id="about" className="about-section">
 
-  return (
-    <section style={{ padding: '20px', background: '#f5f5f5', borderRadius: '8px' }}>
-      <h1>Hello, I'm {name}</h1>
-      <h2>Computer Engineering @ University of Waterloo</h2>
-      <p>
-        Nothing to see here yet, but feel free to reach out on LinkedIn! Open to work.
-      </p>
+            <div className="about-content">
+                <h2 className="section-title">About Me</h2>
+                <div className="about-text">
+                    <p>
+                    Hello! I'm Ian
+                    {/* Your primary introduction paragraph goes here */}
+                    </p>
+                    <p>
+                    Paragraph 2
+                    {/* A secondary paragraph for personality/hobbies goes here */}
+                    </p>
+                </div>
+            </div>
+                    
+            {/* Right Side: Image Placeholder */}
+            <div className="about-image-container">
+                <div className="image-placeholder">
+                    {/* We can swap this for an <img /> tag later */}
+                    <span>[Your Photo Here]</span>
+                </div>
+            </div>
 
-      {/* Your Hyperlinks */}
-      <div style={{ marginTop: '15px' }}>
-        <a href={githubUrl} target="_blank" rel="noopener noreferrer" style={{ marginRight: '10px' }}>
-          GitHub
-        </a>
-        <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

@@ -1,0 +1,56 @@
+/* 1. The Main Container */
+.navbar-container {
+  /* Flexbox is the magic here. It allows us to align the children side-by-side */
+  display: flex;
+  
+  /* space-between pushes the first item (.nav-links) to the left 
+     and the last item (.nav-home-button) to the far right */
+  justify-content: space-between;
+  
+  /* Vertically centers the text inside the bar */
+  align-items: center; 
+  
+  /* Visual Placeholders (Adjust these later) */
+  padding: 1rem 2rem;
+  background-color: #333; /* Dark gray placeholder background */
+  color: white;
+}
+
+/* 2. The Group of Left/Center Links */
+.nav-links {
+  display: flex;
+  
+  /* Creates space between your About, Tech Stack, etc. */
+  gap: 2rem; 
+}
+
+/* 3. Individual Link Styling (Both Router Links and standard <a> tags) */
+.nav-item {
+  color: #e0e0e0;
+  text-decoration: none; /* Removes the default blue underline */
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth fade when hovering */
+}
+
+/* Add a hover effect so users know it's clickable */
+.nav-item:hover {
+  color: #646cff; /* A nice default Vite purple/blue */
+}
+
+/* 4. The Right-Side Home Button Area */
+.nav-home-button {
+  /* You can add specific margins or padding here if needed */
+}
+
+/* 5. The Home Link Text (Your Name) */
+.home-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.home-link:hover {
+  color: #646cff;
+}
