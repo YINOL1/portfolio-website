@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import AboutMe from './components/AboutMe';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -23,11 +24,7 @@ export default function App() {
                 <p>Component coming soon...</p>
               </section>
 
-              {/* Temporary placeholder for Contact */}
-              <section id="contact" style={{ padding: '5rem 2rem', minHeight: '50vh', textAlign: 'center' }}>
-                <h2>Contact</h2>
-                <p>Component coming soon...</p>
-              </section>
+              <Footer />
 
             </div>
           } />

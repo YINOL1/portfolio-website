@@ -14,7 +14,7 @@ export default function AboutMe() {
                     {/* Your primary introduction paragraph goes here */}
                     </p>
                     <p>
-                    Paragraph 2
+                    Paragraph 2 
                     {/* A secondary paragraph for personality/hobbies goes here */}
                     </p>
                 </div>

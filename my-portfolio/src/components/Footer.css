@@ -1,0 +1,70 @@
+/* 1. Main Footer Container */
+.site-footer {
+  background-color: #222; /* A dark, sleek background */
+  color: #fff;
+  padding: 4rem 2rem 1rem; /* Heavy padding on top, lighter on the bottom */
+  margin-top: 4rem; /* Pushes the footer away from the page content above it */
+}
+
+/* 2. Layout Container for the Columns */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; /* CRITICAL: Allows the right side to drop below the left side on small screens */
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px; /* Prevents the footer from stretching too far on ultra-wide monitors */
+  margin: 0 auto; /* Centers the inner content */
+  margin-bottom: 3rem; /* Space between the columns and the copyright bar */
+}
+
+/* 3. Left Side: Contact Form Area */
+.footer-contact-section {
+  flex: 1; /* Allows this section to grow and take up available space */
+  min-width: 300px; /* Ensures the form doesn't get too squished before wrapping */
+}
+
+.footer-contact-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact-section p {
+  color: #aaa;
+  margin-bottom: 1.5rem;
+}
+
+/* 4. Right Side: Social Links Area */
+.footer-social-section {
+  flex: 0 1 250px; /* Keeps the social section a bit more contained */
+}
+
+.footer-social-section h3 {
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  list-style: none; /* Removes standard HTML bullet points */
+  padding: 0;
+}
+
+.social-links li {
+  margin-bottom: 0.8rem;
+}
+
+.social-links a {
+  color: #aaa;
+  text-decoration: none; /* Removes underlines */
+  transition: color 0.3s ease; /* Smooth fade effect */
+}
+
+.social-links a:hover {
+  color: #646cff; /* Matches the Vite purple hover effect from your NavBar */
+}
+
+/* 5. Bottom Copyright Bar */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #444; /* A subtle dividing line */
+  color: #888;
+  font-size: 0.9rem;
+}

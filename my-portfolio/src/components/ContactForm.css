@@ -1,0 +1,67 @@
+/* 1. Main Form Container */
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Creates even spacing between all your input fields */
+  width: 100%;
+}
+
+/* 2. Input Group Wrapper */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Ensures labels align cleanly to the left */
+}
+
+/* 3. Labels */
+.input-group label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc; /* Light gray for good contrast against the dark footer */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* 4. Input Fields and Textarea */
+.input-group input,
+.input-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #444; /* Subtle border to define the edges */
+  border-radius: 4px; /* Slightly rounded corners */
+  background-color: #333; /* Dark input background */
+  color: #fff; /* White text so you can read what you type */
+  font-family: inherit; /* Ensures the form uses your main website font */
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 5. Focus States (When the user clicks into the box) */
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none; /* Removes the default browser highlight */
+  border-color: #646cff; /* Applies your accent color */
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2); /* Adds a soft purple glow */
+}
+
+/* 6. Submit Button */
+.submit-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #646cff; /* Main accent color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 0.5rem;
+}
+
+/* 7. Submit Button Interactions */
+.submit-btn:hover {
+  background-color: #535bf2; /* Slightly darker purple when hovered */
+}
+
+.submit-btn:active {
+  transform: scale(0.98); /* Creates a satisfying "press down" effect when clicked */
+}
