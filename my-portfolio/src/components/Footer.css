@@ -1,3 +1,4 @@
+/* Footer Main */
 .site-footer {
   background: #3a3a3a;
   color: #d9d9d9;
@@ -7,12 +8,10 @@
   margin-left: calc(50% - 50vw);
   box-sizing: border-box;
 }
-
 .footer-content {
   max-width: 960px;
   margin: 0 auto 1.25rem;
 }
-
 .footer-bottom {
   max-width: 960px;
   margin: 0 auto;
@@ -27,19 +26,18 @@
   text-align: center;
 }
 
+/* Footer Links */
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
-
 .footer-links a {
   color: #cfcfcf;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 .footer-links a:hover {
   color: #ffffff;
 }
