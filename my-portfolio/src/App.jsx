@@ -5,8 +5,10 @@ import Footer from './components/Footer';
 
 function PageLayout({ children }) {
   return (
-    <div style={{ padding: '5rem 2rem', minHeight: '100vh' }}>
-      {children}
+    <div style={{ padding: '5rem 2rem 0', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1 }}>
+        {children}
+      </div>
       <Footer />
     </div>
   );
@@ -14,13 +16,11 @@ function PageLayout({ children }) {
 
 export default function App() {
   return (
-    // BrowserRouter acts as the engine for all your links and routes
     <BrowserRouter>
       <NavBar /> 
-
       <main>
         <Routes>
-            
+          
           {/* HOME ROUTE ("/") */}
           <Route path="/" element={
             <PageLayout>
@@ -54,7 +54,7 @@ export default function App() {
             </PageLayout>
           } />
 
-          {/* Fallback 404 Route just in case someone types a bad URL */}
+          {/* Fallback 404 Route Bad URL */}
           <Route path="*" element={
             <PageLayout>
               <div style={{ textAlign: 'center' }}>
