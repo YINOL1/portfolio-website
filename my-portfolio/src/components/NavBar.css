@@ -1,8 +1,9 @@
+/* Transition Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* 1. The Main Container */
+/* Main Container */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -10,7 +11,7 @@ html {
   padding: 1rem 2rem;
   background-color: white;
   color: rgb(51, 51, 51);
-  width: 100vw;
+  width: 100vw; 
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -25,13 +26,11 @@ html {
   transform: translateY(-100%);
 }
 
-/* 2. The Group of Left/Center Links */
+/* Links */
 .nav-links {
   display: flex;
   gap: 2rem; 
 }
-
-/* 3. Link Styling */
 .nav-item,
 .home-link {
   position: relative;
