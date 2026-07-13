@@ -2,8 +2,15 @@
 .site-footer {
   background-color: #222; /* A dark, sleek background */
   color: #fff;
-  padding: 4rem 2rem 1rem; /* Heavy padding on top, lighter on the bottom */
-  margin-top: 4rem; /* Pushes the footer away from the page content above it */
+  padding: 2rem 2rem 1rem; /* Heavy padding on top, lighter on the bottom */
+  margin-top: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 /* 2. Layout Container for the Columns */

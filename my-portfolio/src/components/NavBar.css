@@ -1,56 +1,69 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* 1. The Main Container */
 .navbar-container {
-  /* Flexbox is the magic here. It allows us to align the children side-by-side */
   display: flex;
-  
-  /* space-between pushes the first item (.nav-links) to the left 
-     and the last item (.nav-home-button) to the far right */
   justify-content: space-between;
-  
-  /* Vertically centers the text inside the bar */
   align-items: center; 
-  
-  /* Visual Placeholders (Adjust these later) */
   padding: 1rem 2rem;
-  background-color: #333; /* Dark gray placeholder background */
-  color: white;
+  background-color: white;
+  color: rgb(51, 51, 51);
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.navbar-visible {
+  transform: translateY(0);
+}
+.navbar-hidden {
+  transform: translateY(-100%);
 }
 
 /* 2. The Group of Left/Center Links */
 .nav-links {
   display: flex;
-  
-  /* Creates space between your About, Tech Stack, etc. */
   gap: 2rem; 
 }
 
-/* 3. Individual Link Styling (Both Router Links and standard <a> tags) */
-.nav-item {
-  color: #e0e0e0;
-  text-decoration: none; /* Removes the default blue underline */
-  font-weight: 500;
-  transition: color 0.3s ease; /* Smooth fade when hovering */
-}
-
-/* Add a hover effect so users know it's clickable */
-.nav-item:hover {
-  color: #646cff; /* A nice default Vite purple/blue */
-}
-
-/* 4. The Right-Side Home Button Area */
-.nav-home-button {
-  /* You can add specific margins or padding here if needed */
-}
-
-/* 5. The Home Link Text (Your Name) */
+/* 3. Link Styling */
+.nav-item,
 .home-link {
-  color: white;
+  position: relative;
+  display: inline-block;
+  color: rgb(51, 51, 51);
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.home-link {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
 }
-
+.nav-item::after,
+.home-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.nav-item:hover,
 .home-link:hover {
-  color: #646cff;
+  color: lightgrey;
+}
+.nav-item:hover::after,
+.home-link:hover::after {
+  width: 100%;
+  opacity: 1;
 }
