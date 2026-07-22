@@ -7,6 +7,7 @@ export default function NavBar() {
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollY = useRef(0);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const hideDropdownTimeout = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,6 +27,30 @@ export default function NavBar() {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        return () => {
+            if (hideDropdownTimeout.current) {
+                clearTimeout(hideDropdownTimeout.current);
+            }
+        };
+    }, []);
+
+    const showDropdown = (name) => {
+        if (hideDropdownTimeout.current) {
+            clearTimeout(hideDropdownTimeout.current);
+        }
+        setActiveDropdown(name);
+    };
+
+    const hideDropdown = () => {
+        if (hideDropdownTimeout.current) {
+            clearTimeout(hideDropdownTimeout.current);
+        }
+        hideDropdownTimeout.current = window.setTimeout(() => {
+            setActiveDropdown(null);
+        }, 150);
+    };
 
     const aboutItems = [
         { label: 'My Story', link: '/#about-me' },
@@ -49,20 +74,32 @@ export default function NavBar() {
             <div className="nav-links">
                 <div
                     className="nav-item-wrapper"
-                    onMouseEnter={() => setActiveDropdown('about')}
-                    onMouseLeave={() => setActiveDropdown(null)}
+                    onMouseEnter={() => showDropdown('about')}
+                    onMouseLeave={hideDropdown}
                 >
                     <a href="/" className="nav-item">About Me</a>
-                    {activeDropdown === 'about' && <Dropdown items={aboutItems} />}
+                    {activeDropdown === 'about' && (
+                        <Dropdown
+                            items={aboutItems}
+                            onMouseEnter={() => showDropdown('about')}
+                            onMouseLeave={hideDropdown}
+                        />
+                    )}
                 </div>
 
                 <div 
                     className="nav-item-wrapper"
-                    onMouseEnter={() => setActiveDropdown('experiences')}
-                    onMouseLeave={() => setActiveDropdown(null)}
+                    onMouseEnter={() => showDropdown('experiences')}
+                    onMouseLeave={hideDropdown}
                 >
                     <Link to='/experience' className="nav-item">Experiences</Link>
-                    {activeDropdown === 'experiences' && <Dropdown items={experienceItems} />}
+                    {activeDropdown === 'experiences' && (
+                        <Dropdown
+                            items={experienceItems}
+                            onMouseEnter={() => showDropdown('experiences')}
+                            onMouseLeave={hideDropdown}
+                        />
+                    )}
                 </div>
                 {/* <a href="/#tech-stack" className="nav-item">Tech Stack</a> */}
                 {/* <Link to="/projects" className="nav-item">Projects</Link> */}

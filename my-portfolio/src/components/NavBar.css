@@ -31,6 +31,11 @@ html {
   display: flex;
   gap: 3rem; 
 }
+.nav-item-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .home-link {
   position: relative;
   display: inline-block;
