@@ -29,9 +29,8 @@ html {
 /* Links */
 .nav-links {
   display: flex;
-  gap: 2rem; 
+  gap: 3rem; 
 }
-.nav-item,
 .home-link {
   position: relative;
   display: inline-block;
@@ -44,6 +43,14 @@ html {
   font-weight: bold;
   font-size: 1.4rem;
   letter-spacing: 1px;
+}
+.nav-item {
+  position: relative;
+  display: flex;
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 .nav-item::after,
 .home-link::after {

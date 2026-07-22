@@ -5,10 +5,7 @@
 .contact-card {
   max-width: 680px;
   margin: 0 auto;
-  /* border-radius: 14px; */
   padding: 1.5rem 1.25rem;
-  /* background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12); */
 }
 
 .contact-card h2 {
@@ -48,7 +45,7 @@
   padding: 0.7rem 0.8rem;
   font: inherit;
   background: rgba(255, 255, 255, 0.9);
-  color: #222;
+  color: rgba(255, 255, 255, 0.18);
   font-variant-ligatures: none;
 }
 
@@ -60,7 +57,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #9ca3af;
+  border-color: grey;
 }
 
 /* Button */

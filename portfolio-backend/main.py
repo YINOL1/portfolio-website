@@ -19,7 +19,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"], # Allows POST, GET, etc.
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -28,7 +28,6 @@ class ContactForm(BaseModel):
     email: str
     message: str
 
-# 5. Define the Endpoint
 @app.post("/api/contact")
 async def submit_contact_form(form_data: ContactForm):
     logger.info("Received message from: %s", form_data.name)

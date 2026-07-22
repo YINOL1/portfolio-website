@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 function PageLayout({ children }) {
   return (
-    <div style={{ padding: '5rem 2rem 0', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div style={{ flex: 1 }}>
         {children}
       </div>

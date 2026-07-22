@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from './Dropdown';
 import './NavBar.css';
 
 export default function NavBar() {
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollY = useRef(0);
+    const [activeDropdown, setActiveDropdown] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,23 +27,48 @@ export default function NavBar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const aboutItems = [
+        { label: 'My Story', link: '/#about-me' },
+        { label: 'Tech Stack', link: '/#tech-stack' }
+    ];
+
+    const experienceItems = [
+        { label: 'Work', link: '/experience/#work' },
+        { label: 'Projects', link: '/experience/#projects' }
+    ];
+
     return (
         <nav className={`navbar-container ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
         
-        {/* LEFT SIDE: The "Home" Button */}
-        <div className="nav-home-button">
-            <a href="/" className="home-link">Ian Wu</a>
-        </div>
+            {/* LEFT SIDE: The "Home" Button */}
+            <div className="nav-home-button">
+                <a href="/" className="home-link">Ian Wu</a>
+            </div>
 
-        {/* RIGHT SIDE: Navigation Links*/}
-        <div className="nav-links">
-            <a href="/#about" className="nav-item">About Me</a>
-            <a href="/#tech-stack" className="nav-item">Tech Stack</a>
-            <Link to="/projects" className="nav-item">Projects</Link>
-            <Link to="/experience" className="nav-item">Experience</Link>
-            <a href="#contact" className="nav-item">Contact</a>
-        </div>
+            {/* RIGHT SIDE: Navigation Links*/}
+            <div className="nav-links">
+                <div
+                    className="nav-item-wrapper"
+                    onMouseEnter={() => setActiveDropdown('about')}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                >
+                    <a href="/" className="nav-item">About Me</a>
+                    {activeDropdown === 'about' && <Dropdown items={aboutItems} />}
+                </div>
 
+                <div 
+                    className="nav-item-wrapper"
+                    onMouseEnter={() => setActiveDropdown('experiences')}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                >
+                    <Link to='/experience' className="nav-item">Experiences</Link>
+                    {activeDropdown === 'experiences' && <Dropdown items={experienceItems} />}
+                </div>
+                {/* <a href="/#tech-stack" className="nav-item">Tech Stack</a> */}
+                {/* <Link to="/projects" className="nav-item">Projects</Link> */}
+
+                <a href="#contact" className="nav-item">Contact</a>
+            </div>
         </nav>
     );
 }
