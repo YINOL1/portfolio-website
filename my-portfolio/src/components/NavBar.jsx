@@ -8,6 +8,7 @@ export default function NavBar() {
     const lastScrollY = useRef(0);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const hideDropdownTimeout = useRef(null);
+    const showDropdownTimeout = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,6 +34,9 @@ export default function NavBar() {
             if (hideDropdownTimeout.current) {
                 clearTimeout(hideDropdownTimeout.current);
             }
+            if (showDropdownTimeout.current) {
+                clearTimeout(showDropdownTimeout.current);
+            }
         };
     }, []);
 
@@ -40,16 +44,24 @@ export default function NavBar() {
         if (hideDropdownTimeout.current) {
             clearTimeout(hideDropdownTimeout.current);
         }
-        setActiveDropdown(name);
+        if (showDropdownTimeout.current) {
+            clearTimeout(showDropdownTimeout.current);
+        }
+        showDropdownTimeout.current = window.setTimeout(() => {
+            setActiveDropdown(name);
+        }, 250);
     };
 
     const hideDropdown = () => {
+        if (showDropdownTimeout.current) {
+            clearTimeout(showDropdownTimeout.current);
+        }
         if (hideDropdownTimeout.current) {
             clearTimeout(hideDropdownTimeout.current);
         }
         hideDropdownTimeout.current = window.setTimeout(() => {
             setActiveDropdown(null);
-        }, 150);
+        }, 50);
     };
 
     const aboutItems = [
@@ -101,8 +113,6 @@ export default function NavBar() {
                         />
                     )}
                 </div>
-                {/* <a href="/#tech-stack" className="nav-item">Tech Stack</a> */}
-                {/* <Link to="/projects" className="nav-item">Projects</Link> */}
 
                 <a href="#contact" className="nav-item">Contact</a>
             </div>
