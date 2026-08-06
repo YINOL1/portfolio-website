@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './Dropdown.css';
 
 export default function Dropdown({ items, onMouseEnter, onMouseLeave }) {
@@ -7,7 +6,7 @@ export default function Dropdown({ items, onMouseEnter, onMouseLeave }) {
       <ul className="list-items">
         {items.map((item, index) => (
           <li key={index}>
-            <Link to={item.link} className="dropdown-link">{item.label}</Link>
+            <a href={item.link} className="dropdown-link">{item.label}</a>
           </li>
         ))}
       </ul>

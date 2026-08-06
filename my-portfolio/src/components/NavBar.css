@@ -71,7 +71,7 @@ html {
 } */
 .nav-item:hover,
 .home-link:hover {
-  color: rgb(180, 180, 180);
+  color: rgb(140, 140, 140);
 }
 /* .nav-item:hover::after,
 .home-link:hover::after {
@@ -81,7 +81,7 @@ html {
 /* Keep hover effect active when hovering over dropdown */
 .nav-item-wrapper:hover .nav-item,
 .nav-item-wrapper:hover .home-link {
-  color: rgb(180, 180, 180);
+  color: rgb(140, 140, 140);
 }
 /* .nav-item-wrapper:hover .nav-item::after,
 .nav-item-wrapper:hover .home-link::after {

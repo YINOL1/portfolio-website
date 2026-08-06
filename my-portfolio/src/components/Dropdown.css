@@ -24,7 +24,7 @@
 .dropdown-link {
   display: inline-block;
   padding: 0.5rem 1rem;
-  color: rgb(180, 180, 180);
+  color: rgb(140, 140, 140);
   text-decoration: none;
   font-weight: 400;
   transition: background-color 0.2s ease, color 0.2s ease;

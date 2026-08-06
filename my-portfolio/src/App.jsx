@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import AboutMe from './components/AboutMe';
+import TechStack from './components/TechStack';
 import Footer from './components/Footer';
 
 function PageLayout({ children }) {
@@ -27,10 +28,7 @@ export default function App() {
               <div className="home-page-container">
                 <AboutMe />
 
-                <section id="tech-stack" style={{ padding: '5rem 2rem', minHeight: '50vh', textAlign: 'center', backgroundColor: '#f9f9f9' }}>
-                  <h2>Tech Stack</h2>
-                  <p>Component coming soon...</p>
-                </section>
+                <TechStack />
               </div>
             </PageLayout>
           } />
