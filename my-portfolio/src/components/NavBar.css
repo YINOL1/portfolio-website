@@ -31,11 +31,6 @@ html {
   display: flex;
   gap: 3rem; 
 }
-.nav-item-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
 .home-link {
   position: relative;
   display: inline-block;
@@ -57,7 +52,7 @@ html {
   font-weight: 500;
   transition: color 0.2s ease;
 }
-/* .nav-item::after,
+.nav-item::after,
 .home-link::after {
   content: '';
   position: absolute;
@@ -68,23 +63,13 @@ html {
   background-color: currentColor;
   opacity: 0;
   transition: width 0.3s ease, opacity 0.3s ease;
-} */
+}
 .nav-item:hover,
 .home-link:hover {
   color: rgb(140, 140, 140);
 }
-/* .nav-item:hover::after,
+.nav-item:hover::after,
 .home-link:hover::after {
   width: 100%;
   opacity: 1;
-} */
-/* Keep hover effect active when hovering over dropdown */
-.nav-item-wrapper:hover .nav-item,
-.nav-item-wrapper:hover .home-link {
-  color: rgb(140, 140, 140);
 }
-/* .nav-item-wrapper:hover .nav-item::after,
-.nav-item-wrapper:hover .home-link::after {
-  width: 100%;
-  opacity: 1;
-} */

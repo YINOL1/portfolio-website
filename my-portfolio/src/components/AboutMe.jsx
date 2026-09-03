@@ -7,13 +7,13 @@ export default function AboutMe() {
         <section id="about-me" className="about-section">
 
             <div className="about-content">
-                <h2 className="section-title">About Me</h2>
+                <h2 className="section-title">Ian Yi Jin Wu</h2>
                 <div className="about-text">
                     <p>
-                    Hi! I'm Ian, a 1B Computer Engineering Student at UWaterloo
+                    Hi, I'm Ian, currently a 1B Computer Engineering Student at the University of Waterloo.
                     </p>
                     <p>
-                    Paragraph 2 
+                    I am interested in software development and want to step foot into the embedded territory.
                     </p>
                 </div>
             </div>
