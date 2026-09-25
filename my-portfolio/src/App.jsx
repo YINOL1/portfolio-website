@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import AboutMe from './components/AboutMe';
-import TechStack from './components/TechStack';
+// import AboutMe from './components/AboutMe';
 import Footer from './components/Footer';
 
 function PageLayout({ children }) {
@@ -25,24 +24,14 @@ export default function App() {
           {/* HOME ROUTE ("/") */}
           <Route path="/" element={
             <PageLayout>
-              <div className="home-page-container">
-                <AboutMe />
-
-                <TechStack />
-              </div>
-            </PageLayout>
-          } />
-          
-          {/* MULTI-PAGE ROUTES */}
-          <Route path="/projects" element={
-            <PageLayout>
               <div style={{ textAlign: 'center' }}>
-                <h2>Projects Page</h2>
+                <h2>About Me Page</h2>
                 <p>Coming soon...</p>
               </div>
             </PageLayout>
           } />
           
+          {/* MULTI-PAGE ROUTES */} 
           <Route path="/experience" element={
             <PageLayout>
               <div style={{ textAlign: 'center' }}>
