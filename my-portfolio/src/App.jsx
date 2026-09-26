@@ -1,58 +1,58 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar';
-// import AboutMe from './components/AboutMe';
+import AboutMe from './components/AboutMe';
+import ExperiencePage from './components/ExperiencePage';
 import Footer from './components/Footer';
 
-function PageLayout({ children }) {
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
+
+  return null;
+}
+
+function PageLayout({ children, theme }) {
   return (
-    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ flex: 1 }}>
-        {children}
-      </div>
-      <Footer />
+    <div className="page-shell">
+      <div className="page-content">{children}</div>
+      <Footer theme={theme} />
     </div>
   );
 }
 
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'light';
+    }
+
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    return savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light';
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('portfolio-theme', theme);
+    }
+  }, [theme]);
+
   return (
-    <BrowserRouter>
-      <NavBar /> 
-      <main>
-        <Routes>
-          
-          {/* HOME ROUTE ("/") */}
-          <Route path="/" element={
-            <PageLayout>
-              <div style={{ textAlign: 'center' }}>
-                <h2>About Me Page</h2>
-                <p>Coming soon...</p>
-              </div>
-            </PageLayout>
-          } />
-          
-          {/* MULTI-PAGE ROUTES */} 
-          <Route path="/experience" element={
-            <PageLayout>
-              <div style={{ textAlign: 'center' }}>
-                <h2>Experience Page</h2>
-                <p>Coming soon...</p>
-              </div>
-            </PageLayout>
-          } />
-
-          {/* Fallback 404 Route Bad URL */}
-          <Route path="*" element={
-            <PageLayout>
-              <div style={{ textAlign: 'center' }}>
-                <h2>404 - Page Not Found</h2>
-              </div>
-            </PageLayout>
-          } />
-
-        </Routes>
-      </main>
-
-    </BrowserRouter>
+    <div className="app-shell" data-theme={theme}>
+      <BrowserRouter>
+        <ScrollToTop />
+        <NavBar theme={theme} onToggleTheme={() => setTheme((currentTheme) => currentTheme === 'light' ? 'dark' : 'light')} />
+        <main>
+          <Routes>
+            <Route path="/" element={<PageLayout theme={theme}><AboutMe theme={theme} /></PageLayout>} />
+            <Route path="/experience" element={<PageLayout theme={theme}><ExperiencePage /></PageLayout>} />
+            <Route path="*" element={<PageLayout theme={theme}><section className="not-found"><h2>404 - Page Not Found</h2><p>The page you’re looking for doesn’t exist.</p></section></PageLayout>} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </div>
   );
 }

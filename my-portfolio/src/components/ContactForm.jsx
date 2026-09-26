@@ -76,7 +76,7 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="your-email@example.com"
+              placeholder="youremail@example.com"
               required
             />
           </label>
