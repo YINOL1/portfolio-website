@@ -1,4 +1,6 @@
 import './AboutMe.css';
+import ProjectCard from './ProjectCard';
+import SectionHeader from './SectionHeader';
 import fullBodyWhite from '../assets/full-body-white.jpg';
 import fullBodyBlack from '../assets/full-body-black.jpg';
 import githubBlack from '../assets/github-black-icon.png';
@@ -62,7 +64,7 @@ export default function About({ theme = 'light' }) {
 
   return (
     <section className="about-page">
-      <div className="hero-section">
+      <section className="hero-section">
         <div className="hero-copy">
           <p className="eyebrow">Software engineer · frontend developer</p>
           <h1>Hi, I’m Ian</h1>
@@ -118,13 +120,14 @@ export default function About({ theme = 'light' }) {
           </div>
 
         </div>
-      </div>
+      </section>
 
-      <div className="info-block">
-        <div className="section-heading inside-section">
-          <p className="eyebrow">Core strengths</p>
-          <h2>Software engineering shaped by clarity and execution.</h2>
-        </div>
+      <section className="info-block">
+        <SectionHeader
+          eyebrow="Core strengths"
+          title="Software engineering shaped by clarity and execution."
+          className="inside-section"
+        />
 
         <div className="focus-grid">
           {focusAreas.map((area) => (
@@ -134,32 +137,37 @@ export default function About({ theme = 'light' }) {
             </article>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="showcase-block">
-        <div className="section-heading inside-section">
-          <p className="eyebrow">Selected work</p>
-          <h2>Projects grounded in usability, performance, and design quality.</h2>
-        </div>
+      <section className="showcase-block">
+        <SectionHeader
+          eyebrow="Selected work"
+          title="Projects grounded in usability, performance, and design quality."
+          className="inside-section"
+        />
 
         <div className="project-grid">
           {projectHighlights.map((project) => (
-            <article key={project.name} className="project-card">
-              <div className="project-image-slot" aria-label={`${project.name} project image placeholder`} />
-              <p className="project-name">{project.name}</p>
-              <p>{project.summary}</p>
-              <span>{project.stack}</span>
-            </article>
+            <ProjectCard
+              key={project.name}
+              name={project.name}
+              summary={project.summary}
+              stack={project.stack}
+              imageLabel={`${project.name} project image placeholder`}
+            />
           ))}
 
-          <a className="project-card project-cta-card" href="/experience">
-            <div className="project-image-slot project-cta-slot" aria-label="More project work" />
-            <p className="project-name">More work</p>
-            <p>See the full project archive and continued updates from the experience page.</p>
-            <span>View all projects →</span>
-          </a>
+          <ProjectCard
+            name="More work"
+            summary="See the full project archive and continued updates from the experience page."
+            stack="View all projects →"
+            variant="cta"
+            href="/experience"
+            imageLabel="More project work"
+            isLink
+          />
         </div>
-      </div>
+      </section>
     </section>
   );
 }

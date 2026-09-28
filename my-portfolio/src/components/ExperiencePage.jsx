@@ -1,4 +1,6 @@
 import './ExperiencePage.css';
+import ProjectCard from './ProjectCard';
+import SectionHeader from './SectionHeader';
 
 export default function ExperiencePage() {
   const highlights = [
@@ -60,61 +62,65 @@ export default function ExperiencePage() {
 
   return (
     <section className="experience-page">
-      <div className="section-heading">
-        <p className="eyebrow">Experience</p>
-        <h2>Product-minded engineering with a focus on clean, practical execution.</h2>
-      </div>
+      <section className="experience-section">
+        <SectionHeader
+          eyebrow="Experience"
+          title="Product-minded engineering with a focus on clean, practical execution."
+        />
 
-      <div className="experience-layout">
-        <div className="experience-panel">
-          <h3>Professional background</h3>
-          {roles.map((role) => (
-            <article key={role.title} className="role-card">
-              <div className="role-header">
-                <div>
-                  <h4>{role.title}</h4>
-                  <p>{role.company}</p>
+        <div className="experience-layout">
+          <div className="experience-panel">
+            <h3>Professional background</h3>
+            {roles.map((role) => (
+              <article key={role.title} className="role-card">
+                <div className="role-header">
+                  <div>
+                    <h4>{role.title}</h4>
+                    <p>{role.company}</p>
+                  </div>
+                  <span>{role.period}</span>
                 </div>
-                <span>{role.period}</span>
-              </div>
-              <p>{role.description}</p>
-            </article>
-          ))}
-        </div>
-
-        <aside className="experience-panel side-panel">
-          <h3>Strengths</h3>
-          <ul className="highlight-list">
-            {highlights.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-
-          <div className="stack-group">
-            {stacks.map((stack) => (
-              <span key={stack} className="stack-pill">{stack}</span>
+                <p>{role.description}</p>
+              </article>
             ))}
           </div>
-        </aside>
-      </div>
 
-      <div className="experience-projects">
-        <div className="section-heading inside-section">
-          <p className="eyebrow">Project snapshots</p>
-          <h2>Selected work, ready for future visuals.</h2>
+          <aside className="experience-panel side-panel">
+            <h3>Strengths</h3>
+            <ul className="highlight-list">
+              {highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+
+            <div className="stack-group">
+              {stacks.map((stack) => (
+                <span key={stack} className="stack-pill">{stack}</span>
+              ))}
+            </div>
+          </aside>
         </div>
+      </section>
+
+      <section className="experience-projects">
+        <SectionHeader
+          eyebrow="Project snapshots"
+          title="Selected work, ready for future visuals."
+          className="inside-section"
+        />
 
         <div className="experience-project-grid">
           {projects.map((project) => (
-            <article key={project.name} className="experience-project-card">
-              <div className="experience-project-image-slot" aria-label={`${project.name} project image placeholder`} />
-              <p className="experience-project-name">{project.name}</p>
-              <p>{project.summary}</p>
-              <span>{project.stack}</span>
-            </article>
+            <ProjectCard
+              key={project.name}
+              name={project.name}
+              summary={project.summary}
+              stack={project.stack}
+              imageLabel={`${project.name} project image placeholder`}
+            />
           ))}
         </div>
-      </div>
+      </section>
     </section>
   );
 }

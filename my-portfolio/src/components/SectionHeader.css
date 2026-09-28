@@ -1,0 +1,37 @@
+.section-header {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding: 0;
+}
+
+.experience-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.experience-section .section-header {
+  padding: 0 1.5rem;
+}
+
+.experience-projects .section-header {
+  padding: 0;
+}
+
+.section-header__eyebrow,
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.section-header h2,
+.section-heading h2,
+.not-found h2 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
