@@ -6,6 +6,7 @@ const initialFormState = {
   email: '',
   message: ''
 };
+const contactApiUrl = import.meta.env.VITE_CONTACT_API_URL || 'http://127.0.0.1:8000';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState(initialFormState);
@@ -27,7 +28,7 @@ export default function ContactForm() {
 
     /* Temporary Local Host */
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/contact', {
+      const response = await fetch(`${contactApiUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

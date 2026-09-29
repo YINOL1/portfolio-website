@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <div className="app-shell" data-theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <NavBar theme={theme} onToggleTheme={() => setTheme((currentTheme) => currentTheme === 'light' ? 'dark' : 'light')} />
         <main>
