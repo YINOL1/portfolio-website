@@ -12,29 +12,29 @@ import mailWhite from '../assets/mail-white-icon.png';
 
 const focusAreas = [
   {
-    title: 'Frontend engineering',
-    text: 'I build responsive, accessible, and visually polished interfaces using modern JavaScript frameworks and a strong eye for usability.'
+    title: 'Embedded Systems',
+    text: 'Aspiring Embedded Software Engineer, currently exploring in the world of low-level programming and simple embedded projects.'
   },
   {
-    title: 'Product-minded development',
-    text: 'I translate business goals into clean, practical features that improve customer experience and create measurable product value.'
+    title: 'Cloud Development',
+    text: 'Experience in Azure cloud environments and creating automative pipelines in Azure. Built and deployed AI agents is AWS Bedrock AgentCore.'
   },
   {
-    title: 'Full-stack collaboration',
-    text: 'I work comfortably across the stack, connecting user interfaces to APIs, data flows, and backend logic to deliver real business outcomes.'
+    title: 'Frontend Engineering',
+    text: 'Experience in building responsive and visually polished interfaces using JavaScript and TypeScript frameworks both individually and professionally.'
   }
 ];
 
 const projectHighlights = [
   {
-    name: 'Portfolio & personal brand site',
-    summary: 'Designed and developed a clean, modern front-end experience to showcase skills, experience, and projects with a polished presentation.',
-    stack: 'React · Vite · CSS · Responsive UI'
+    name: 'Personal Portfolio Website',
+    summary: 'Designed and developed a clean, modern front-end website with a touch of Python to showcase personal experience, skills, and projects with a polished presentation.',
+    stack: 'React · JavaScript · Python · CSS'
   },
   {
-    name: 'Client-facing web applications',
-    summary: 'Built interactive experiences focused on usability, performance, and clear user journeys for real-world audiences.',
-    stack: 'JavaScript · UI Architecture · UX Design'
+    name: 'Quest Schedule Exporter',
+    summary: 'Built an lightweight, front-end web application to simplify the class schedule exporting process for Univeristy of Waterloo students.',
+    stack: 'JavaScript · HTML/CSS'
   }
 ];
 
@@ -66,10 +66,10 @@ export default function About({ theme = 'light' }) {
     <section className="about-page">
       <section className="hero-section">
         <div className="hero-copy">
-          <p className="eyebrow">Software engineer · frontend developer</p>
+          <p className="eyebrow">Computer Engineering Student @ UWaterloo</p>
           <h1>Hi, I’m Ian</h1>
           <p className="about-subtitle">
-            I design and build user-centered digital experiences with a focus on clean code, strong product thinking, and polished front-end execution.
+            I have a passion of user-oriented software that simplifies everyday tasks and want to make big money in the future. Currently exploring embedded systems and low-latency system designs. Feel free to contact me for open positions!!!
           </p>
 
           <div className="hero-actions">
@@ -94,16 +94,16 @@ export default function About({ theme = 'light' }) {
 
           <ul className="hero-stats" aria-label="Highlights about Ian Wu">
             <li>
-              <strong>3+</strong>
-              <span>years in web development</span>
+              <strong>2A</strong>
+              <span>CE @ uwaterloo</span>
             </li>
             <li>
-              <strong>10+</strong>
-              <span>projects built</span>
+              <strong>2</strong>
+              <span>Co-op experiences</span>
             </li>
             <li>
-              <strong>100%</strong>
-              <span>user-focused mindset</span>
+              <strong>4</strong>
+              <span>software projects built</span>
             </li>
           </ul>
         </div>
@@ -124,9 +124,8 @@ export default function About({ theme = 'light' }) {
 
       <section className="info-block">
         <SectionHeader
-          eyebrow="Core strengths"
-          title="Software engineering shaped by clarity and execution."
-          className="inside-section"
+          eyebrow="Areas of Growth"
+          title="Areas I have experience in and would like to grow through my education and career."
         />
 
         <div className="focus-grid">

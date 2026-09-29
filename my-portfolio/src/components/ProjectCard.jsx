@@ -6,7 +6,7 @@ export default function ProjectCard({
   stack,
   variant = 'default',
   href,
-  ctaLabel,
+  // ctaLabel,
   imageLabel,
   accent = false,
   isLink = false,

@@ -4,58 +4,58 @@ import SectionHeader from './SectionHeader';
 
 export default function ExperiencePage() {
   const highlights = [
-    'Built responsive, accessible user interfaces for modern web experiences',
-    'Collaborated with teams to turn product requirements into clear, usable features',
-    'Focused on maintainable front-end architecture, performance, and design consistency'
+    'Engineered and shipped real products to clients during internship experiences.',
+    'Collaborated with teams to turn product requirements into clear, usable features.',
+    'Strong desire to learn and quick adaptability to new technology and environment.'
   ];
 
   const roles = [
     {
-      title: 'Frontend Developer',
-      company: 'Independent / Product Work',
-      period: '2023 — Present',
+      title: 'Software Engineering Consultant Intern',
+      company: 'BrainRidge Consulting Inc.',
+      period: 'Sep 2026 — Present',
       description: 'Developed polished web experiences with a strong focus on UI clarity, responsiveness, and product usability across personal and client-facing projects.'
     },
     {
-      title: 'Software Engineer',
-      company: 'Project-Based Experience',
-      period: '2021 — 2023',
+      title: 'Embedded Software Team Member',
+      company: 'Waterloo Aerial Robotics Group Design Team',
+      period: 'May 2026 — Aug 2026',
       description: 'Built and improved digital tools and interfaces using JavaScript, Python, and front-end best practices to support business and user workflows.'
     },
     {
-      title: 'Web Developer',
-      company: 'Freelance / Personal Projects',
-      period: '2019 — 2021',
+      title: 'AI Cloud Developer',
+      company: 'WEAccelerate & Event Minds Matter',
+      period: 'Jan 2026 — Apr 2026',
       description: 'Created custom websites and product interfaces for personal brands and small businesses with an emphasis on performance, presentation, and usability.'
     }
   ];
 
-  const stacks = ['JavaScript', 'React', 'HTML/CSS', 'Python', 'SQL', 'FastAPI', 'Git', 'Responsive Design'];
+  const stacks = ['JavaScript', 'C++', 'C', 'Python', 'React', 'HTML/CSS', 'PostgreSQL', 'FastAPI', 'Git', 'AWS', 'Azure'];
 
   const projects = [
     {
-      name: 'Portfolio & personal brand site',
-      summary: 'Designed and built a premium digital presence with clean information architecture, polished styling, and a strong editorial feel.',
-      stack: 'React · Vite · CSS'
+      name: 'Personal Portfolio Website',
+      summary: 'Designed and developed a clean, modern front-end website with a touch of Python to showcase personal experience, skills, and projects with a polished presentation.',
+      stack: 'React · JavaScript · Python · CSS'
     },
     {
-      name: 'User-facing product interfaces',
-      summary: 'Created responsive, accessible interfaces that help users complete tasks quickly and confidently.',
-      stack: 'JavaScript · UX UI'
+      name: 'Quest Schedule Exporter',
+      summary: 'Built an lightweight, front-end web application to simplify the class schedule exporting process for Univeristy of Waterloo students.',
+      stack: 'JavaScript · HTML/CSS',
     },
     {
-      name: 'Workflow and internal tooling',
-      summary: 'Built practical tools that streamline operations and make data-heavy workflows easier to navigate.',
-      stack: 'Python · APIs · SQL'
+      name: 'Godot Pipe Puzzle Game',
+      summary: 'Design and developed a pipe connector puzzle game in Godot under a time constraint for the University of Waterloo Fall Game Jam.',
+      stack: 'Godot · GDScript'
     },
-    {
-      name: 'Design system explorations',
-      summary: 'Experimented with reusable patterns and visual systems that improve consistency and velocity across products.',
-      stack: 'Design Systems · UI Patterns'
-    },
+    // {
+    //   name: 'Design system explorations',
+    //   summary: 'Experimented with reusable patterns and visual systems that improve consistency and velocity across products.',
+    //   stack: 'Design Systems · UI Patterns'
+    // },
     {
       name: 'More to come',
-      summary: 'New work and product case studies are being added as the portfolio grows.',
+      summary: 'New works and projects are being added as the portfolio grows.',
       stack: 'Ongoing updates'
     }
   ];
@@ -65,12 +65,12 @@ export default function ExperiencePage() {
       <section className="experience-section">
         <SectionHeader
           eyebrow="Experience"
-          title="Product-minded engineering with a focus on clean, practical execution."
+          title="Experience gained through co-op education and mentorship."
         />
 
         <div className="experience-layout">
           <div className="experience-panel">
-            <h3>Professional background</h3>
+            <h3>Professional Experience</h3>
             {roles.map((role) => (
               <article key={role.title} className="role-card">
                 <div className="role-header">
@@ -105,7 +105,7 @@ export default function ExperiencePage() {
       <section className="experience-projects">
         <SectionHeader
           eyebrow="Project snapshots"
-          title="Selected work, ready for future visuals."
+          title="Published and functional project built with a purpose."
           className="inside-section"
         />
 

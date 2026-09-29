@@ -5,12 +5,13 @@
 }
 
 .experience-section {
-  max-width: 1100px;
+  max-width: none;
   margin: 0 auto;
 }
 
 .experience-section .section-header {
-  padding: 0 1.5rem;
+  max-width: none;
+  padding: 0;
 }
 
 .experience-projects .section-header {
