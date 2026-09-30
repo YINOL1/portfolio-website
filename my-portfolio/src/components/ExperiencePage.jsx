@@ -30,7 +30,7 @@ export default function ExperiencePage() {
     }
   ];
 
-  const stacks = ['JavaScript', 'C++', 'C', 'Python', 'React', 'HTML/CSS', 'PostgreSQL', 'FastAPI', 'Git', 'AWS', 'Azure'];
+  const stacks = ['JavaScript', 'C++', 'C', 'Python', 'React', 'HTML/CSS', 'PostgreSQL', 'FastAPI', 'Prisma', 'Git', 'AWS', 'Azure', 'Docker'];
 
   const projects = [
     {

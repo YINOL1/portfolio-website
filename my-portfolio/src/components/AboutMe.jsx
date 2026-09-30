@@ -20,8 +20,8 @@ const focusAreas = [
     text: 'Experience in Azure cloud environments and creating automative pipelines in Azure. Built and deployed AI agents is AWS Bedrock AgentCore.'
   },
   {
-    title: 'Frontend Engineering',
-    text: 'Experience in building responsive and visually polished interfaces using JavaScript and TypeScript frameworks both individually and professionally.'
+    title: 'Full-Stack Development',
+    text: 'Building responsive, modern user interfaces backed by scalable database architectures and reliable, high-performance backend logic.'
   }
 ];
 
@@ -69,7 +69,7 @@ export default function About({ theme = 'light' }) {
           <p className="eyebrow">Computer Engineering Student @ UWaterloo</p>
           <h1>Hi, I’m Ian</h1>
           <p className="about-subtitle">
-            I have a passion of user-oriented software that simplifies everyday tasks and want to make big money in the future. Currently exploring embedded systems and low-latency system designs. Feel free to contact me for open positions!!!
+            I have a passion of user-oriented software that simplifies everyday tasks and have a goal of making big bucks in the future. I am currently exploring embedded systems and low-latency system designs. Feel free to contact me for a quick chat or literally anything!
           </p>
 
           <div className="hero-actions">
