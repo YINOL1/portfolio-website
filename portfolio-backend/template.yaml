@@ -5,7 +5,7 @@ Description: Portfolio contact form API on AWS Lambda
 Parameters:
   FrontendOrigin:
     Type: String
-    Default: https://yinol1.github.io
+    Default: https://www.iyjwu.com
     Description: Origin allowed to submit contact form requests
 
 Resources:

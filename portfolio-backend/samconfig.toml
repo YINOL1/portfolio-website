@@ -7,7 +7,7 @@ s3_prefix = "portfolio-contact-api"
 region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
 disable_rollback = true
-parameter_overrides = "FrontendOrigin=\"https://yinol1.github.io\""
+parameter_overrides = "FrontendOrigin=\"https://www.iyjwu.com\""
 image_repositories = []
 
 [default.global.parameters]
