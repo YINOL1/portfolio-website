@@ -13,6 +13,14 @@ Resources:
     Type: AWS::Serverless::HttpApi
     Properties:
       StageName: $default
+      CorsConfiguration:
+        AllowOrigins:
+          - !Ref FrontendOrigin
+        AllowHeaders:
+          - content-type
+        AllowMethods:
+          - OPTIONS
+          - POST
 
   ContactFunction:
     Type: AWS::Serverless::Function
