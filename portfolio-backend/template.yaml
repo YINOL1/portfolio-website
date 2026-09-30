@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Portfolio contact form API on AWS Lambda
+
+Parameters:
+  FrontendOrigin:
+    Type: String
+    Default: https://yinol1.github.io
+    Description: Origin allowed to submit contact form requests
+
+Resources:
+  ContactApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: $default
+
+  ContactFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: main.handler
+      Runtime: python3.12
+      MemorySize: 512
+      Timeout: 30
+      Environment:
+        Variables:
+          FRONTEND_ORIGIN: !Ref FrontendOrigin
+      Events:
+        ContactRoute:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ContactApi
+            Path: /{proxy+}
+            Method: ANY
+        RootRoute:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ContactApi
+            Path: /
+            Method: ANY
+
+Outputs:
+  ContactApiUrl:
+    Description: HTTPS endpoint for the contact API
+    Value: !Sub 'https://${ContactApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}'

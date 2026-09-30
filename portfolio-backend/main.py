@@ -5,6 +5,7 @@ from email.message import EmailMessage
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 from pydantic import BaseModel
 
 logging.basicConfig(level=logging.INFO)
@@ -71,3 +72,6 @@ def submit_contact_form(form_data: ContactForm):
 
     logger.info("Contact form email delivered")
     return {"status": "success", "message": "Thank you! Your message has been sent."}
+
+
+handler = Mangum(app)

@@ -23,3 +23,23 @@ py -m uvicorn main:app --reload --app-dir portfolio-backend
 ```
 
 The SMTP host defaults to `smtp.gmail.com`; set `SMTP_HOST` only if using a different SMTP provider. Configure `SMTP_USERNAME` and `SMTP_PASSWORD` as secrets in production as well. The endpoint returns an error instead of claiming success when email is not configured or delivery fails.
+
+## Deploy to AWS Lambda
+
+The backend is packaged for AWS Lambda with Mangum and AWS SAM. Install the AWS CLI, AWS SAM CLI, and Docker, then configure AWS credentials for your account.
+
+From the repository root, build and deploy the service:
+
+```powershell
+Set-Location portfolio-backend
+sam build --use-container
+sam deploy --guided
+```
+
+When prompted for `FrontendOrigin`, use `https://yinol1.github.io`. After deployment, copy the `ContactApiUrl` output. In the Lambda console, open the function created by the stack and add these environment variables under **Configuration > Environment variables**:
+
+- `SMTP_USERNAME`: the Gmail sender account
+- `SMTP_PASSWORD`: that account's Google App Password
+- `SMTP_HOST`: optional; defaults to `smtp.gmail.com`
+
+Keep the App Password private. Then add a GitHub Actions repository variable named `VITE_CONTACT_API_URL` with the `ContactApiUrl` value (without a trailing slash), and rerun the GitHub Pages deployment workflow. The frontend will then send contact form requests to the Lambda API.
