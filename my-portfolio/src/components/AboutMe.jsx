@@ -141,7 +141,7 @@ export default function About({ theme = 'light' }) {
       <section className="showcase-block">
         <SectionHeader
           eyebrow="Selected work"
-          title="Projects grounded in usability, performance, and design quality."
+          title="My newest works or some projects I think are interesting."
           className="inside-section"
         />
 
