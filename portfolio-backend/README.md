@@ -1,6 +1,6 @@
 # Portfolio Backend
 
-This backend powers the contact form on the portfolio website. It accepts form submissions from the frontend, validates the request, and sends the message to the site owner via Gmail SMTP.
+This backend powers the contact form on the portfolio website. It accepts form submissions from the frontend, validates the request, and sends the message via Gmail SMTP.
 
 ## Backend architecture
 
@@ -30,5 +30,3 @@ The service is built as a lightweight serverless API using Python and FastAPI:
 - AWS API Gateway HTTP API
 - Gmail SMTP
 - AWS SAM for deployment
-
-This design keeps the backend simple, scalable, and inexpensive while enabling secure contact form submissions from the portfolio site.
