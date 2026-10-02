@@ -1,6 +1,6 @@
 # Portfolio Frontend
 
-This is the frontend for my portfolio website, built with React and Vite. It delivers a clean, responsive experience for showcasing my work, skills, and background.
+This is the frontend for my portfolio website, built with React and Vite.
 
 ## Architecture
 
@@ -10,4 +10,4 @@ This is the frontend for my portfolio website, built with React and Vite. It del
 - Component-based styling with separate CSS files for each section
 - Light/dark theme persistence using browser local storage
 
-The app is designed to be lightweight, easy to maintain, and ready to be deployed as a modern portfolio site.
+The app is designed to be lightweight and easy to maintain.
